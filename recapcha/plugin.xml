@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin>
+	<name>
+		<lang name="default">ReCapcha</lang>
+	</name>
+	<author>
+		<lang name="default">LS: legioner</lang>
+	</author>
+	<homepage>http://www.devls.ru</homepage>
+	<settings></settings>
+	<version>0.0.1</version>
+	<requires>
+		<livestreet>1.0.3</livestreet>
+		<plugins>
+		</plugins>
+	</requires>
+	<description>
+		<lang name="default">Check capcha when you add a topic, helps to protect the site from spam attacks.</lang>
+		<lang name="russian">Проверка capcha при добавлении топика, позволяет защитить сайт от спам атак.</lang>
+	</description>
+</plugin>

@@ -23,7 +23,10 @@ class PluginRecapcha_HookRecapcha extends Hook {
 	}
 
 	public function FormAddTopicEnd() {
-		return $this->Viewer_Fetch(Plugin::GetTemplatePath(__CLASS__).'inject.form_add_topic_topic_end.tpl');
+		$bShouldBeCapchaDisplayed = $this->PluginRecapcha_Recapcha_ShouldBeCapchaDisplayed();
+		
+		if($bShouldBeCapchaDisplayed)
+			return $this->Viewer_Fetch(Plugin::GetTemplatePath(__CLASS__).'inject.form_add_topic_topic_end.tpl');	
 	}
 
 	public function displayCopyright(){

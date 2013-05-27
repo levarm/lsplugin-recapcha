@@ -16,5 +16,9 @@ $config=array();
 
 $config['use']['topic'] = true; 	// Использование capcha в топиках [ true / false ]
 
+// После изменения этих опций рекомендуется сбросить кеш сайта или переактивировать плагин
+$config['ShowForAdministrators']		= false;   	//Показывать ли капчу администраторам
+$config['UserRatingToDisableCapcha']	= 5;   		//Рейтинг пользователя, после которого не нужно вводить капчу
+
 return $config;
 ?>

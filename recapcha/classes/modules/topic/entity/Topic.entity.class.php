@@ -1,7 +1,7 @@
 <?php
  /*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*
   *			   LiveStreet Engine Social Networking		   *
-  *			   Copyright © 2008 Mzhelskiy Maxim			   *
+  *			   Copyright Â© 2008 Mzhelskiy Maxim			   *
   *   -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --   *
   *	Plugin				: ReCapcha						   *
   *	Creation plugin		: LS: legioner					   *
@@ -10,7 +10,7 @@
   *--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*/
 
 /**
- * Îáúåêò ñóùíîñòè òîïèêà
+ * ÐžÐ±ÑŠÐµÐºÑ‚ ÑÑƒÑ‰Ð½Ð¾ÑÑ‚Ð¸ Ñ‚Ð¾Ð¿Ð¸ÐºÐ°
  *
  * @package modules.topic
  * @since 1.0
@@ -19,8 +19,12 @@ class PluginRecapcha_ModuleTopic_EntityTopic extends PluginRecapcha_Inherit_Modu
 
 	public function Init(){
 		parent::Init();
-		// Îïðåäåëÿåì âàëèäàöèþ captcha
-		$this->aValidateRules[] = array('captcha', 'captcha', 'on' => array('topic','link','photoset'));
+		// ÐžÐ¿Ñ€ÐµÐ´ÐµÐ»ÑÐµÐ¼ Ð²Ð°Ð»Ð¸Ð´Ð°Ñ†Ð¸ÑŽ captcha
+		$bShouldBeCapchaDisplayed = $this->PluginRecapcha_Recapcha_ShouldBeCapchaDisplayed();
+		
+		if($bShouldBeCapchaDisplayed){
+			$this->aValidateRules[] = array('captcha', 'captcha', 'on' => array('topic','link','photoset'));
+		}
 	}
 
 }

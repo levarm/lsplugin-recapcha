@@ -1,12 +1,34 @@
 <?php
+ /*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*
+  *			   LiveStreet Engine Social Networking		   *
+  *			   Copyright © 2008 Mzhelskiy Maxim			   *
+  *   -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --   *
+  *	Plugin				: ReCapcha						   *
+  *	Creation plugin		: LS: legioner					   *
+  *	Official site		: www.devls.ru					   *
+  *	Contact e-mail		: mod@devls.ru					   *
+  *--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*--*/
 
-class PluginRecapcha_ModuleRecapcha extends Module{		
+/**
+ * Модуль для работы с плагином 'ReCapcha'
+ *
+ * @package modules.recapcha
+ * @since 1.0
+ */
+class PluginRecapcha_ModuleRecapcha extends Module{
 
-	//**************************************************************************************************
+	/**
+	 * Инициализация
+	 *
+	 */
 	public function Init(){		
 	}
 	
-	//**************************************************************************************************
+	/**
+	 * Проверяет возможность отключения капчи для администраторов и пользователей с высоким рейтингом
+	 *
+	 * @return bool
+	 */
 	public function ShouldBeCapchaDisplayed(){
 	
 		$oUserCurrent = $this->User_GetUserCurrent();

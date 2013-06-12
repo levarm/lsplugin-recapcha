@@ -16,10 +16,12 @@
 class PluginRecapcha_HookRecapcha extends Hook {
 
 	public function RegisterHook() {
-		if (Config::Get('plugin.recapcha.use.topic')) {
-			$this->AddHook('template_form_add_topic_topic_end','FormAddTopicEnd');
+		foreach (Config::Get('plugin.recapcha.validate.scenario') as $sKey => $sValue) {
+			$this->AddHook('template_form_add_topic_'.$sValue.'_end','FormAddTopicEnd');
 		}
-        $this->AddHook('template_footer_end', 'displayCopyright',__CLASS__);
+		if(!$this->User_GetUserCurrent()) {
+			$this->AddHook('template_copyright', 'displayCopyright',__CLASS__);
+		}
 	}
 
 	public function FormAddTopicEnd() {
@@ -30,7 +32,7 @@ class PluginRecapcha_HookRecapcha extends Hook {
 	}
 
 	public function displayCopyright(){
-		return '<a href="http://www.alasko.ru/"></a>';
+		return 'ALASKO.ru <a href="http://www.alasko.ru/" target="_blank">бесплатные объявления</a><br/>';
 	}
 
 }

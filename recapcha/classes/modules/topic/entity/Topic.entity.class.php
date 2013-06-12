@@ -23,7 +23,7 @@ class PluginRecapcha_ModuleTopic_EntityTopic extends PluginRecapcha_Inherit_Modu
 		$bShouldBeCapchaDisplayed = $this->PluginRecapcha_Recapcha_ShouldBeCapchaDisplayed();
 		
 		if($bShouldBeCapchaDisplayed){
-			$this->aValidateRules[] = array('captcha', 'captcha', 'on' => array('topic','link','photoset'));
+			$this->aValidateRules[] = array('captcha', 'captcha', 'on' => Config::Get('plugin.recapcha.validate.scenario'));
 		}
 	}
 

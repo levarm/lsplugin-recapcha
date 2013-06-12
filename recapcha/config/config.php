@@ -14,11 +14,11 @@
  */
 $config=array();
 
-$config['use']['topic'] = true; 	// Использование capcha в топиках [ true / false ]
+$config['validate']['scenario'] = array('topic','link','question','photoset'); 	// в каких типах топика использовать capcha
 
 // После изменения этих опций рекомендуется сбросить кеш сайта или переактивировать плагин
-$config['ShowForAdministrators']		= false;   	//Показывать ли капчу администраторам
-$config['UserRatingToDisableCapcha']	= 5;   		//Рейтинг пользователя, после которого не нужно вводить капчу
+$config['ShowForAdministrators']		= false;   	// показывать ли капчу администраторам
+$config['UserRatingToDisableCapcha']	= 5;   		// рейтинг пользователя, после которого не нужно вводить капчу
 
 return $config;
 ?>

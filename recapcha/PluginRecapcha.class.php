@@ -23,7 +23,10 @@ class PluginRecapcha extends Plugin {
 	 */
 	protected $aInherits=array(
 		'action' => array(
-			'ActionTopic' => '_ActionTopic'
+			'ActionTopic' => '_ActionTopic',
+			'ActionLink' => '_ActionLink',
+			'ActionQuestion' => '_ActionQuestion',
+			'ActionPhotoset' => '_ActionPhotoset'
 		),
 		'entity'  =>array(
 			'ModuleTopic_EntityTopic' => '_ModuleTopic_EntityTopic'

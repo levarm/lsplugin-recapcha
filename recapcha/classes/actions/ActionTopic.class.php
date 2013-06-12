@@ -27,7 +27,7 @@ class PluginRecapcha_ActionTopic extends PluginRecapcha_Inherit_ActionTopic {
 		 * Добавляем переменную captcha
 		 */
 		$bShouldBeCapchaDisplayed = $this->PluginRecapcha_Recapcha_ShouldBeCapchaDisplayed();
-		if (Config::Get('plugin.recapcha.use.topic') and $bShouldBeCapchaDisplayed) {
+		if (in_array('topic', Config::Get('plugin.recapcha.validate.scenario')) and $bShouldBeCapchaDisplayed) {
 			$oTopic->setCaptcha(getRequestStr('captcha'));
 		}
 		
